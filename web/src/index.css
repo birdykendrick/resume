@@ -9,16 +9,16 @@
     scrollbar-gutter: stable;
   }
   body {
-    @apply bg-amber-50 text-gray-900 font-sans antialiased;
+    @apply bg-[#1c1917] text-gray-100 font-sans antialiased;
   }
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { @apply bg-transparent; }
-  ::-webkit-scrollbar-thumb { @apply bg-amber-200 rounded-full; }
-  ::-webkit-scrollbar-thumb:hover { @apply bg-amber-300; }
+  ::-webkit-scrollbar-thumb { @apply bg-amber-800/50 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-amber-700/60; }
 }
 
 @layer utilities {
-  .glow { box-shadow: 0 0 24px rgba(251,146,60,0.2); }
+  .glow { box-shadow: 0 0 24px rgba(251,146,60,0.25); }
   .text-gradient {
     background: linear-gradient(135deg, #f97316, #ec4899, #8b5cf6);
     -webkit-background-clip: text;
@@ -26,7 +26,7 @@
     background-clip: text;
   }
   .glass {
-    background: rgba(255,255,255,0.65);
+    background: rgba(255,255,255,0.05);
     backdrop-filter: blur(16px);
     border: 1px solid rgba(251,146,60,0.15);
   }

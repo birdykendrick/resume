@@ -21,23 +21,19 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm border-b border-orange-100"
-          : "bg-amber-50/80 backdrop-blur-md"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-[#1a1412] border-b border-white/5"
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Name — always takes up space to prevent layout shift */}
+        {/* Name */}
         <Link
           to="/"
           onClick={() => setOpen(false)}
           className="flex flex-col leading-tight select-none group"
         >
-          <span className="text-sm font-bold text-gray-900 group-hover:text-accent transition-colors duration-200">
+          <span className="text-sm font-bold text-white group-hover:text-orange-400 transition-colors duration-200">
             Kendrick Khoo
           </span>
-          <span className="text-xs text-gray-400 font-medium">
+          <span className="text-xs text-gray-500 font-medium">
             Student of Singapore Polytechnic
           </span>
         </Link>
@@ -50,10 +46,10 @@ export default function Navbar() {
                 to={to}
                 end={to === "/"}
                 className={({ isActive }) =>
-                  `relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
+                  `relative px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 ${
                     isActive
-                      ? "text-orange-500"
-                      : "text-gray-500 hover:text-gray-900"
+                      ? "text-orange-400"
+                      : "text-gray-400 hover:text-white"
                   }`
                 }
               >
@@ -63,7 +59,7 @@ export default function Navbar() {
                     {isActive && (
                       <motion.span
                         layoutId="nav-indicator"
-                        className="absolute inset-0 bg-orange-50 border border-orange-100 rounded-lg -z-10"
+                        className="absolute inset-0 bg-orange-500/10 border border-orange-500/20 rounded-lg -z-10"
                         transition={{ type: "spring", stiffness: 400, damping: 35 }}
                       />
                     )}
@@ -76,22 +72,22 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded"
+          className="md:hidden flex flex-col gap-1.5 p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 rounded"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
           aria-expanded={open}
         >
           <motion.span
             animate={open ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-            className="block w-6 h-0.5 bg-gray-500 rounded origin-center"
+            className="block w-6 h-0.5 bg-gray-400 rounded origin-center"
           />
           <motion.span
             animate={open ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
-            className="block w-6 h-0.5 bg-gray-500 rounded"
+            className="block w-6 h-0.5 bg-gray-400 rounded"
           />
           <motion.span
             animate={open ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-            className="block w-6 h-0.5 bg-gray-500 rounded origin-center"
+            className="block w-6 h-0.5 bg-gray-400 rounded origin-center"
           />
         </button>
       </nav>
@@ -104,7 +100,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden bg-white/95 backdrop-blur-md border-t border-orange-100 overflow-hidden"
+            className="md:hidden bg-[#1a1412]/95 backdrop-blur-md border-t border-white/5 overflow-hidden"
           >
             <ul className="px-6 py-4 flex flex-col gap-1">
               {links.map(({ to, label }, i) => (
@@ -121,8 +117,8 @@ export default function Navbar() {
                     className={({ isActive }) =>
                       `block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
                         isActive
-                          ? "bg-orange-50 text-orange-500 border border-orange-100"
-                          : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+                          ? "bg-orange-500/10 text-orange-400 border border-orange-500/20"
+                          : "text-gray-400 hover:text-white hover:bg-white/5"
                       }`
                     }
                   >

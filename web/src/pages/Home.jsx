@@ -1,4 +1,4 @@
-]import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageTransition from "../components/PageTransition";
 import { profile } from "../data/profile";
@@ -22,7 +22,7 @@ function FloatingBlob({ className }) {
 export default function Home() {
   return (
     <PageTransition>
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden pt-16 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50">
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden pt-16 bg-gradient-to-br from-orange-100 via-rose-50 to-amber-100">
         <FloatingBlob className="w-[520px] h-[520px] bg-orange-200 -top-40 -left-40" />
         <FloatingBlob className="w-[420px] h-[420px] bg-rose-200 -bottom-24 -right-24" />
         <FloatingBlob className="w-[320px] h-[320px] bg-yellow-100 top-1/3 left-1/2 -translate-x-1/2" />
@@ -63,7 +63,7 @@ export default function Home() {
           >
             <Link
               to="/resume"
-              className="px-7 py-3 rounded-xl font-semibold text-sm bg-gray-900 text-white hover:bg-gray-700 transition-all duration-200 shadow-lg shadow-gray-200 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2"
+              className="px-7 py-3 rounded-xl font-semibold text-sm bg-gray-900 text-white hover:bg-gray-700 transition-all duration-200 shadow-lg shadow-gray-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2"
             >
               View Resume
             </Link>
@@ -87,7 +87,7 @@ export default function Home() {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <span className="text-xs text-gray-300 tracking-widest uppercase">Scroll</span>
+          <span className="text-xs text-gray-400 tracking-widest uppercase">Scroll</span>
           <div className="w-px h-8 bg-gradient-to-b from-gray-300 to-transparent" />
         </motion.div>
       </section>
